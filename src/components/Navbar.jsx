@@ -30,6 +30,8 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const navLinkClass = "relative text-white hover:text-accent text-xl xl:text-2xl uppercase tracking-widest transition-all duration-300 whitespace-nowrap after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-accent after:scale-x-0 after:origin-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-left";
+
   return (
     <>
 
@@ -40,19 +42,19 @@ const Navbar = () => {
           <div className="flex justify-between items-center gap-4 lg:gap-8">
             
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
+            <div className="flex-shrink-0 flex items-center transition-transform duration-300 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]">
               <Link to="/">
-                <Logo className="text-3xl lg:text-4xl" textColor="text-white" />
+                <Logo className="text-xl md:text-2xl lg:text-[1.75rem]" textColor="text-white" />
               </Link>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex flex-1 justify-end items-center gap-6 xl:gap-10">
-              <Link to="/" className="text-white hover:text-accent text-xl xl:text-2xl uppercase tracking-widest transition-colors whitespace-nowrap">Home</Link>
-              <Link to="/our-food" className="text-white hover:text-accent text-xl xl:text-2xl uppercase tracking-widest transition-colors whitespace-nowrap">Our Food</Link>
-              <Link to="/menu" className="text-white hover:text-accent text-xl xl:text-2xl uppercase tracking-widest transition-colors whitespace-nowrap">Menu</Link>
+              <Link to="/" className={navLinkClass}>Home</Link>
+              <Link to="/our-food" className={navLinkClass}>Our Food</Link>
+              <Link to="/menu" className={navLinkClass}>Menu</Link>
               {['Locate', 'Join the Team', 'Franchise'].map((link) => (
-                <a key={link} href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className="text-white hover:text-accent text-xl xl:text-2xl uppercase tracking-widest transition-colors whitespace-nowrap">
+                <a key={link} href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className={navLinkClass}>
                   {link}
                 </a>
               ))}
@@ -76,21 +78,21 @@ const Navbar = () => {
             <div className="px-4 pt-4 pb-6 space-y-4 flex flex-col">
               <Link 
                 to="/"
-                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800"
+                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/our-food"
-                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800"
+                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Our Food
               </Link>
               <Link 
                 to="/menu"
-                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800"
+                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Menu
@@ -99,17 +101,17 @@ const Navbar = () => {
                 <a 
                   key={link} 
                   href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} 
-                  className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800"
+                  className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link}
                 </a>
               ))}
               <div className="flex flex-col space-y-4 pt-4">
-                <button className="border-2 border-white text-white hover:bg-white hover:text-black transition-colors font-heading text-xl px-6 py-3 uppercase w-full">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-[1.02] active:scale-95 font-heading text-xl px-6 py-3 uppercase w-full">
                   Download Menu
                 </button>
-                <button className="bg-accent text-black font-heading text-xl px-6 py-3 uppercase w-full font-bold">
+                <button className="bg-accent text-black hover:bg-[#b8952b] transition-all duration-300 hover:scale-[1.02] active:scale-95 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] font-heading text-xl px-6 py-3 uppercase w-full font-bold">
                   Order Online
                 </button>
               </div>
