@@ -8,11 +8,12 @@ export default {
     extend: {
       colors: {
         primary: "#000000",
-        accent: "#FF0000",
+        accent: "#d4af37", // Devson's Gold
       },
       fontFamily: {
         heading: ['"Bebas Neue"', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        body: ['Montserrat', 'sans-serif'],
+        review: ['"Playfair Display"', 'serif'],
       },
       animation: {
         'ticker': 'ticker 20s linear infinite',

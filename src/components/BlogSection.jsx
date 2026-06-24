@@ -1,26 +1,29 @@
 import React from 'react';
+import image1 from '../assets/1.png';
+import image2 from '../assets/2.png';
+import image3 from '../assets/3.png';
 
 const BlogSection = () => {
   const posts = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "DESIGN",
-      title: "Why Dark Mode is More Than Just a Trend in 2026",
+      image: image1,
+      category: "OFFERS",
+      title: "Get 20% Off Your First Order Online This Month",
       date: "OCT 24"
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "DEVELOPMENT",
-      title: "Optimizing React Applications for Maximum Performance",
+      image: image2,
+      category: "MENU",
+      title: "Introducing Our New Spicy Jalapeño Chicken Burger",
       date: "NOV 02"
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "BUSINESS",
-      title: "How Custom Software Increases Your Company Valuation",
+      image: image3,
+      category: "NEWS",
+      title: "Devsons is Opening a New Location in Birmingham",
       date: "NOV 15"
     }
   ];

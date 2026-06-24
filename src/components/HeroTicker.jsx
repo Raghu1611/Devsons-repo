@@ -1,22 +1,15 @@
 import React from 'react';
 
 const HeroTicker = () => {
-  const tickerText = "NOW OPEN IN LONDON ★ NEW SERVICES AVAILABLE ★ JOIN THE DEVSONS TEAM ★ ";
+  const tickerText = "NOW OPEN IN NOTTINGHAM ★ NEW STORES OPENING SOON ★ JOIN THE BURGER & SAUCE TEAM ★ ";
   
   return (
-    <div className="bg-black border-y border-white/20 overflow-hidden py-3 mt-[88px] lg:mt-[96px]">
-      <div className="flex w-max animate-ticker">
-        {/* We duplicate the text twice to create a seamless infinite scroll loop, making sure to translate by 50% in the animation */}
-        <div className="flex space-x-4 pr-4">
-          <span className="text-white font-heading text-2xl lg:text-3xl tracking-widest whitespace-nowrap">
-            {tickerText} {tickerText} {tickerText}
-          </span>
-        </div>
-        <div className="flex space-x-4 pr-4">
-          <span className="text-white font-heading text-2xl lg:text-3xl tracking-widest whitespace-nowrap">
-            {tickerText} {tickerText} {tickerText}
-          </span>
-        </div>
+    <div className="mt-[90px] lg:mt-[100px] bg-white border-b border-gray-200 overflow-hidden py-3 flex items-center">
+      <div className="whitespace-nowrap animate-ticker inline-block">
+        <span className="text-black font-heading uppercase tracking-widest px-4" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.875rem)' }}>{tickerText}</span>
+        <span className="text-black font-heading uppercase tracking-widest px-4" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.875rem)' }}>{tickerText}</span>
+        <span className="text-black font-heading uppercase tracking-widest px-4" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.875rem)' }}>{tickerText}</span>
+        <span className="text-black font-heading uppercase tracking-widest px-4" style={{ fontSize: 'clamp(1.5rem, 2.5vw, 1.875rem)' }}>{tickerText}</span>
       </div>
     </div>
   );
