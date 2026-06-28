@@ -12,7 +12,7 @@ const ServicesCarousel = () => {
   ];
 
   return (
-    <div className="bg-black py-16 lg:py-24 overflow-hidden border-b border-white/20">
+    <div className="bg-primary py-16 lg:py-24 overflow-hidden border-b border-[#333]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <h2 className="text-white font-heading text-4xl lg:text-5xl uppercase tracking-widest text-center">Our Services</h2>
       </div>
@@ -22,22 +22,22 @@ const ServicesCarousel = () => {
         {services.map((service) => (
           <div 
             key={service.id} 
-            className="flex-none w-64 h-80 bg-white group cursor-pointer snap-center relative transition-transform hover:scale-105 duration-300 flex flex-col justify-center items-center text-center p-6 border-2 border-transparent hover:border-accent"
+            className="flex-none w-64 h-80 bg-secondary group cursor-pointer snap-center relative transition-transform hover:scale-105 duration-300 flex flex-col justify-center items-center text-center p-6 border border-[#333] hover:border-accent"
           >
             {/* Badge */}
             {service.badge && (
-              <div className={`absolute top-4 right-4 font-heading text-xl uppercase px-2 py-1 ${service.badgeType === 'solid' ? 'bg-accent text-white' : 'border-2 border-accent text-accent'}`}>
+              <div className={`absolute top-4 right-4 font-heading text-xl uppercase px-2 py-1 ${service.badgeType === 'solid' ? 'bg-accent text-primary' : 'border border-accent text-accent'}`}>
                 {service.badge}
               </div>
             )}
             
-            <div className="text-black group-hover:text-accent transition-colors duration-300">
+            <div className="text-gray-300 group-hover:text-accent transition-colors duration-300">
               {service.icon}
             </div>
-            <h3 className="text-black font-heading text-3xl uppercase tracking-wide mt-4">{service.title}</h3>
+            <h3 className="text-white font-heading text-3xl uppercase tracking-wide mt-4">{service.title}</h3>
             
             <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="border-b-2 border-black text-black font-heading text-xl uppercase">Learn More</span>
+              <span className="border-b-2 border-accent text-accent font-heading text-xl uppercase">Learn More</span>
             </div>
           </div>
         ))}

@@ -1,31 +1,17 @@
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const ValuesSection = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-  
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
   return (
     <div 
-      ref={ref}
-      className="relative py-24 lg:py-32 overflow-hidden border-y border-gray-200"
+      className="relative py-24 lg:py-40 overflow-hidden border-b border-[#333] bg-primary"
     >
-      {/* Parallax Background Image */}
-      <motion.div 
-        className="absolute inset-0 w-full h-[150%] -top-[25%] bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: 'url("https://burgerandsauce.com/wp-content/uploads/2021/02/burger-and-sauce_hr_early_2020_20-2048x1367.jpg")',
-          y: backgroundY
-        }}
-      />
-      
-      {/* Dark Overlay for rich vibrant image */}
-      <div className="absolute inset-0 bg-black/50"></div>
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-40"
+        style={{ backgroundImage: 'url("/images/devsons_storefront.png")' }}
+      ></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary"></div>
 
       <motion.div 
         className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center"
@@ -55,7 +41,7 @@ const ValuesSection = () => {
         </motion.h2>
         
         <motion.p 
-          className="text-white/90 font-body leading-relaxed mb-12 sm:mb-16 max-w-4xl drop-shadow-md px-2 sm:px-0" style={{ fontSize: 'clamp(1.125rem, 2vw, 1.875rem)' }}
+          className="text-gray-400 font-body leading-relaxed mb-12 sm:mb-16 max-w-4xl drop-shadow-md px-2 sm:px-0" style={{ fontSize: 'clamp(1.125rem, 2vw, 1.875rem)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -65,16 +51,16 @@ const ValuesSection = () => {
         </motion.p>
 
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4 sm:px-0"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto px-4 sm:px-0 justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <motion.button 
-            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255,255,255,0.3)" }}
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(212,175,55,0.3)" }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-black font-heading uppercase hover:bg-accent hover:text-black transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 3rem)' }}>
+            className="bg-accent text-primary font-heading uppercase hover:bg-white transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 3rem)' }}>
             FIND A STORE
           </motion.button>
           <motion.button 

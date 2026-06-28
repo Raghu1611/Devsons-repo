@@ -36,8 +36,8 @@ const Navbar = () => {
     <>
 
       {/* Main Navigation (Black) */}
-      <header className={`fixed w-full z-40 top-0 transition-transform duration-300 font-heading border-b-2 border-accent ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
-      <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-[#111] shadow-2xl py-3' : 'bg-[#111] py-4 lg:py-5'}`}>
+      <header className={`fixed w-full z-40 top-0 transition-transform duration-300 font-heading border-b border-accent ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
+      <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-primary shadow-2xl py-3' : 'bg-primary py-4 lg:py-5'}`}>
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="flex justify-between items-center gap-4 lg:gap-8">
             
@@ -51,13 +51,9 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex flex-1 justify-end items-center gap-6 xl:gap-10">
               <Link to="/" className={navLinkClass}>Home</Link>
+              <Link to="/about" className={navLinkClass}>About Us</Link>
               <Link to="/our-food" className={navLinkClass}>Our Food</Link>
               <Link to="/menu" className={navLinkClass}>Menu</Link>
-              {['Locate', 'Join the Team', 'Franchise'].map((link) => (
-                <a key={link} href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} className={navLinkClass}>
-                  {link}
-                </a>
-              ))}
             </div>
 
             {/* Mobile menu button */}
@@ -74,44 +70,41 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#111]/95 border-t border-gray-800 absolute w-full left-0 top-full shadow-2xl backdrop-blur-md">
+          <div className="lg:hidden bg-primary border-t border-[#333] absolute w-full left-0 top-full shadow-2xl backdrop-blur-md">
             <div className="px-4 pt-4 pb-6 space-y-4 flex flex-col">
               <Link 
                 to="/"
-                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
+                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-[#333] transition-all duration-300 hover:pl-4 hover:bg-white/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
+                to="/about"
+                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-[#333] transition-all duration-300 hover:pl-4 hover:bg-white/5"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link 
                 to="/our-food"
-                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
+                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-[#333] transition-all duration-300 hover:pl-4 hover:bg-white/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Our Food
               </Link>
               <Link 
                 to="/menu"
-                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
+                className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-[#333] transition-all duration-300 hover:pl-4 hover:bg-white/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Menu
               </Link>
-              {['Locate', 'Join the Team', 'Franchise'].map((link) => (
-                <a 
-                  key={link} 
-                  href={`#${link.toLowerCase().replace(/\s+/g, '-')}`} 
-                  className="text-white hover:text-accent block py-2 font-heading text-2xl uppercase tracking-wide border-b border-gray-800 transition-all duration-300 hover:pl-4 hover:bg-white/5"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link}
-                </a>
-              ))}
               <div className="flex flex-col space-y-4 pt-4">
-                <button className="border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-[1.02] active:scale-95 font-heading text-xl px-6 py-3 uppercase w-full">
+                <button className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300 hover:scale-[1.02] active:scale-95 font-heading text-xl px-6 py-3 uppercase w-full">
                   Download Menu
                 </button>
-                <button className="bg-accent text-black hover:bg-[#b8952b] transition-all duration-300 hover:scale-[1.02] active:scale-95 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] font-heading text-xl px-6 py-3 uppercase w-full font-bold">
+                <button className="bg-accent text-primary hover:bg-[#b8952b] transition-all duration-300 hover:scale-[1.02] active:scale-95 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] font-heading text-xl px-6 py-3 uppercase w-full font-bold">
                   Order Online
                 </button>
               </div>

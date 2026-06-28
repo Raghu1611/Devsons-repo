@@ -1,28 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
-@font-face {
-  font-family: 'Burger-Sauce';
-  font-weight: 400;
-  font-style: normal;
-  src: url('https://burgerandsauce.com/wp-content/uploads/fonts/burger-sauce-regular.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Altone';
-  font-weight: 400;
-  font-style: normal;
-  src: url('https://burgerandsauce.com/wp-content/uploads/fonts/Altone-Regular.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Altone';
-  font-weight: 700;
-  font-style: normal;
-  src: url('https://burgerandsauce.com/wp-content/uploads/fonts/Altone-Bold.woff2') format('woff2');
-  font-display: swap;
-}
 
 @tailwind base;
 @tailwind components;
@@ -30,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-body bg-primary text-white;
+    @apply font-body bg-primary text-offwhite;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;

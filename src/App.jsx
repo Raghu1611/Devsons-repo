@@ -5,16 +5,18 @@ import Footer from './components/Footer';
 
 // Pages
 import Home from './pages/Home';
+import About from './pages/About';
 import OurFood from './pages/OurFood';
 import Menu from './pages/Menu';
 
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-white text-gray-900 font-body selection:bg-accent selection:text-black">
+      <div className="min-h-screen bg-primary text-offwhite font-body selection:bg-accent selection:text-primary">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/our-food" element={<OurFood />} />
           <Route path="/menu" element={<Menu />} />
         </Routes>

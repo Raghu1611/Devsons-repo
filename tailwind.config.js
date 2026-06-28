@@ -7,13 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#000000",
-        accent: "#d4af37", // Devson's Gold
+        primary: "#0D0D0D", // Deep black background
+        secondary: "#1A1A1A", // Dark Grey for cards/boxes
+        accent: "#D4AF37", // Devson's Gold
+        'accent-dark': "#8B6F3D", // Bronze
+        offwhite: "#F5F5F5",
       },
       fontFamily: {
-        heading: ['"Bebas Neue"', 'sans-serif'],
+        heading: ['"Cormorant Garamond"', 'serif'],
         body: ['Montserrat', 'sans-serif'],
-        review: ['"Playfair Display"', 'serif'],
       },
       animation: {
         'ticker': 'ticker 20s linear infinite',

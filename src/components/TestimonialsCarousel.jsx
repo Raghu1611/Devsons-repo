@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Crown } from 'lucide-react';
 
 const TestimonialsCarousel = () => {
   const testimonials = [
@@ -15,7 +16,7 @@ const TestimonialsCarousel = () => {
     },
     {
       id: 3,
-      text: "Amazing value for money! The loaded fries are generous and the fact that everything is fresh and never frozen makes Burger & Sauce my new favorite spot.",
+      text: "Amazing value for money! The loaded fries are generous and the fact that everything is fresh and never frozen makes Devson's my new favorite spot.",
       author: "EMMA WILLIAMS, CUSTOMER"
     }
   ];
@@ -35,7 +36,7 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="bg-gray-50 py-16 lg:py-24 overflow-hidden border-b border-gray-200">
+    <div className="bg-primary py-16 lg:py-24 overflow-hidden border-b border-[#333]">
       <motion.div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         initial="hidden"
@@ -48,7 +49,7 @@ const TestimonialsCarousel = () => {
           <p className="text-accent font-heading tracking-widest uppercase mb-4" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)' }}>
             What People Are Saying
           </p>
-          <h2 className="text-black font-heading uppercase tracking-widest leading-none" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}>
+          <h2 className="text-white font-heading uppercase tracking-widest leading-none" style={{ fontSize: 'clamp(2.5rem, 6vw, 5.5rem)' }}>
             Don't Just Take Our Word For It
           </h2>
         </motion.div>
@@ -60,11 +61,11 @@ const TestimonialsCarousel = () => {
               key={testimonial.id} 
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
-              className="flex-none w-[300px] sm:w-[400px] lg:w-[500px] bg-white text-black p-8 sm:p-10 snap-center relative border-b-8 border-accent shadow-lg"
+              className="flex-none w-[300px] sm:w-[400px] lg:w-[500px] bg-secondary text-white p-8 sm:p-10 snap-center relative border border-[#333] shadow-lg flex flex-col justify-between hover:border-accent transition-colors"
             >
-              <img src="https://burgerandsauce.com/wp-content/uploads/2021/03/iconmonstr-quote-1.svg" alt="Quote" className="w-12 h-12 lg:w-16 lg:h-16 opacity-10 absolute top-6 left-6" />
+              <Crown className="w-8 h-8 text-accent opacity-20 absolute top-6 left-6" />
               <div className="relative z-10 pt-4">
-                <p className="text-black font-review italic leading-relaxed mb-6 font-medium" style={{ fontSize: 'clamp(1.25rem, 1.8vw, 1.6rem)' }}>
+                <p className="text-gray-300 font-review italic leading-relaxed mb-6 font-medium" style={{ fontSize: 'clamp(1.25rem, 1.8vw, 1.6rem)' }}>
                   "{testimonial.text}"
                 </p>
                 <p className="text-accent font-heading uppercase tracking-widest mt-8" style={{ fontSize: 'clamp(1.25rem, 1.5vw, 1.6rem)' }}>
