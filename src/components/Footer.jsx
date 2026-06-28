@@ -17,7 +17,7 @@ const Footer = () => {
               <Logo className="text-3xl" textColor="text-white" />
             </div>
             <p className="text-gray-400 font-body leading-relaxed mb-8 text-sm">
-              Experience the best food and dining with Devson's. Delivering happiness, one order at a time.
+              Experience the best food with Devson's. Delivering happiness, one order at a time.
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-9 h-9 bg-[#1a1a24] rounded flex items-center justify-center text-gray-400 hover:text-accent hover:bg-[#2a2a36] transition-all duration-300" aria-label="Facebook">
@@ -123,6 +123,15 @@ const Footer = () => {
                 <a href="mailto:admin@devsons.co.uk" className="text-gray-400 font-body hover:text-accent transition-colors">
                   admin@devsons.co.uk
                 </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Mail className="text-accent flex-shrink-0" size={16} />
+                <div className="flex flex-col">
+                  <span className="text-gray-400 font-body text-xs mb-1">For franchise queries:</span>
+                  <a href="mailto:franchise@devsons.co.uk" className="text-gray-400 font-body hover:text-accent transition-colors">
+                    franchise@devsons.co.uk
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-accent flex-shrink-0" size={16} />

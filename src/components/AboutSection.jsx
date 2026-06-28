@@ -44,7 +44,7 @@ const AboutSection = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <p>
-              At Devson's, we believe that great taste comes from premium ingredients. That's why our beef, chicken, and veggie burger patties are handmade every single day. We never use frozen meat.
+              At Devson's, we believe that great taste comes from premium ingredients. That's why our beef, chicken, and veggie burger patties are handmade every single day.
             </p>
             <p>
               Our signature sauces are crafted to perfectly complement every bite, delivering a luxurious taste experience that keeps our customers coming back for more. Quality you can taste, freshness you can trust.
