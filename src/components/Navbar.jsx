@@ -58,12 +58,6 @@ const Navbar = () => {
 
             {/* Desktop CTA (Right side) */}
             <div className="hidden lg:flex lg:w-1/4 justify-end items-center">
-              <Link to="/menu">
-                <button className="bg-accent text-primary font-heading uppercase tracking-widest text-lg px-6 xl:px-8 py-2.5 rounded-xl hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] font-bold border-2 border-accent hover:border-white flex items-center gap-2">
-                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
-                  ORDER NOW
-                </button>
-              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -113,9 +107,6 @@ const Navbar = () => {
               <div className="flex flex-col space-y-4 pt-4">
                 <button className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300 hover:scale-[1.02] active:scale-95 font-heading text-xl px-6 py-3 uppercase w-full">
                   Download Menu
-                </button>
-                <button className="bg-accent text-primary hover:bg-[#b8952b] transition-all duration-300 hover:scale-[1.02] active:scale-95 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] font-heading text-xl px-6 py-3 uppercase w-full font-bold">
-                  Order Online
                 </button>
               </div>
             </div>
