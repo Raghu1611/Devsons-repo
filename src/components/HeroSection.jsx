@@ -15,17 +15,10 @@ const HeroSection = () => {
   return (
     <div 
       ref={ref}
-      className="relative w-full min-h-[85vh] flex items-center justify-center bg-primary overflow-hidden border-b border-[#333] pt-[100px]"
+      className="relative w-full min-h-[85vh] flex items-center justify-center bg-primary overflow-hidden border-b border-[#333]"
     >
-      {/* Hero Background - Storefront Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-40"
-        style={{ backgroundImage: 'url("/images/devsons_storefront.png")' }}
-      ></div>
-      
-      {/* Dark Overlay for depth and text readability */}
-      <div className="absolute inset-0 bg-black/60"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent"></div>
+      {/* Solid background for clean contrast with the glowing floating burger */}
+      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary to-primary"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 py-12">
         {/* Left Text Content */}
@@ -92,7 +85,7 @@ const HeroSection = () => {
           <img 
             src="/images/devsons_signature_burger.png" 
             alt="Devson's Signature Burger" 
-            className="w-full max-w-xl h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform duration-700"
+            className="w-full max-w-xl h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform duration-700 mix-blend-lighten"
           />
         </motion.div>
       </div>

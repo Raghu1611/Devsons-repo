@@ -6,10 +6,10 @@
 
 @layer base {
   body {
-    @apply font-body bg-primary text-offwhite;
+    @apply font-body font-medium bg-primary text-offwhite;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
+    @apply font-heading font-semibold tracking-tight;
   }
 }
 

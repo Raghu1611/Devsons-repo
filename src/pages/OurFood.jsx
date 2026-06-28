@@ -16,33 +16,42 @@ const OurFood = () => {
     <main className="bg-primary min-h-screen pt-[90px] lg:pt-[100px] overflow-hidden selection:bg-accent selection:text-primary">
       
       {/* Hero Section */}
-      <div ref={heroRef} className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden border-b border-[#333]">
+      <div className="relative w-full h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden border-b border-[#333]">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: 'url("/images/devsons_storefront.png")' }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url("/images/oklahoma_classic.png")' }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-primary/80"></div>
+        
+        {/* Gradients to ensure text readability over the background image */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/40"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(13,13,13,0.8)_100%)]"></div>
         
         <motion.div 
-          className="relative z-10 text-center px-4"
+          className="relative z-10 text-center px-4 w-full flex flex-col items-center justify-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
+          <p className="text-accent font-body tracking-[0.2em] uppercase text-sm sm:text-base font-semibold mb-4 sm:mb-6 drop-shadow-md">
+            Our Signature Craft
+          </p>
+          
           <motion.h1 
-            className="text-white font-heading uppercase tracking-[0.2em] drop-shadow-2xl mb-6"
-            style={{ fontSize: 'clamp(4rem, 12vw, 9rem)' }}
+            className="text-white font-heading uppercase leading-[1.1] tracking-wide drop-shadow-[0_0_30px_rgba(0,0,0,0.8)] mb-6"
+            style={{ fontSize: 'clamp(4rem, 10vw, 8.5rem)' }}
           >
-            OUR FOOD
+            OKLAHOMA<br/>CLASSIC
           </motion.h1>
+          
           <motion.p
-            className="text-accent font-review italic drop-shadow-lg max-w-3xl mx-auto"
-            style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}
+            className="text-gray-100 font-body leading-relaxed max-w-3xl mx-auto drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]"
+            style={{ fontSize: 'clamp(1.2rem, 2vw, 1.6rem)' }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            "Handcrafted daily. Never frozen. The ultimate burger experience."
+            Thinly sliced sweet onions smashed directly into the beef patty, topped with melted American cheese and our signature sauce.
           </motion.p>
         </motion.div>
       </div>
@@ -82,7 +91,7 @@ const OurFood = () => {
             <img 
               src="/images/devsons_signature_burger.png" 
               alt="Fresh Handmade Burger" 
-              className="w-full max-w-lg h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform duration-700"
+              className="w-full max-w-lg h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform duration-700 mix-blend-lighten"
             />
           </motion.div>
         </div>
@@ -123,7 +132,7 @@ const OurFood = () => {
             transition={{ duration: 1 }}
             src="/images/devsons_packaging.png"
             alt="Devson's Premium Packaging"
-            className="w-full h-full object-cover min-h-[500px]"
+            className="w-full h-full object-cover min-h-[500px] mix-blend-lighten"
           />
         </div>
       </div>
@@ -164,7 +173,7 @@ const OurFood = () => {
             <img 
               src="/images/devsons_loaded_fries.png" 
               alt="Devson's Loaded Fries" 
-              className="w-full max-w-xl h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.15)] hover:scale-105 transition-transform duration-700"
+              className="w-full max-w-xl h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.15)] hover:scale-105 transition-transform duration-700 mix-blend-lighten"
             />
           </motion.div>
         </div>

@@ -40,6 +40,21 @@ const Footer = () => {
             <h4 className="text-white font-body font-bold mb-6 text-base tracking-wide">Company</h4>
             <ul className="space-y-4 text-sm">
               <li>
+                <Link to="/" className="text-gray-400 font-body hover:text-accent transition-colors flex items-center gap-3">
+                  <span className="w-1 h-1 bg-gray-500 inline-block"></span> Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/our-food" className="text-gray-400 font-body hover:text-accent transition-colors flex items-center gap-3">
+                  <span className="w-1 h-1 bg-gray-500 inline-block"></span> Our Food
+                </Link>
+              </li>
+              <li>
+                <Link to="/menu" className="text-gray-400 font-body hover:text-accent transition-colors flex items-center gap-3">
+                  <span className="w-1 h-1 bg-gray-500 inline-block"></span> Menu
+                </Link>
+              </li>
+              <li>
                 <Link to="/about" className="text-gray-400 font-body hover:text-accent transition-colors flex items-center gap-3">
                   <span className="w-1 h-1 bg-gray-500 inline-block"></span> About Us
                 </Link>

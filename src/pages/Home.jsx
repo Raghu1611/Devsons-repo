@@ -6,7 +6,7 @@ import ValuesSection from '../components/ValuesSection';
 
 const Home = () => {
   return (
-    <main>
+    <main className="bg-primary min-h-screen pt-[90px] lg:pt-[100px] selection:bg-accent selection:text-primary overflow-hidden">
       <ValuesSection />
       <HeroSection />
       <MenuCarousel />

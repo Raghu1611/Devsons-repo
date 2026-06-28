@@ -42,18 +42,28 @@ const Navbar = () => {
           <div className="flex justify-between items-center gap-4 lg:gap-8">
             
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center transition-transform duration-300 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+            <div className="flex-shrink-0 flex items-center lg:w-1/4">
               <Link to="/">
                 <Logo className="text-xl md:text-2xl lg:text-[1.75rem]" textColor="text-white" />
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex flex-1 justify-end items-center gap-6 xl:gap-10">
+            {/* Desktop Navigation (Centered) */}
+            <div className="hidden lg:flex flex-1 justify-center items-center gap-6 xl:gap-10">
               <Link to="/" className={navLinkClass}>Home</Link>
               <Link to="/about" className={navLinkClass}>About Us</Link>
               <Link to="/our-food" className={navLinkClass}>Our Food</Link>
               <Link to="/menu" className={navLinkClass}>Menu</Link>
+            </div>
+
+            {/* Desktop CTA (Right side) */}
+            <div className="hidden lg:flex lg:w-1/4 justify-end items-center">
+              <Link to="/menu">
+                <button className="bg-accent text-primary font-heading uppercase tracking-widest text-lg px-6 xl:px-8 py-2.5 rounded-xl hover:bg-white transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.5)] font-bold border-2 border-accent hover:border-white flex items-center gap-2">
+                  <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                  ORDER NOW
+                </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}

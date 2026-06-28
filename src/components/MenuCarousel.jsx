@@ -109,7 +109,7 @@ const MenuCarousel = () => {
               <img 
                 src={item.image} 
                 alt={item.name} 
-                className="w-full h-full object-contain p-4 transform group-hover:scale-110 transition-transform duration-700 relative z-10" 
+                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 relative z-10 mix-blend-lighten" 
               />
             </div>
             

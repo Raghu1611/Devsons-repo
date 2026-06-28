@@ -2,48 +2,46 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const PartnerStrip = () => {
-  const containerVariants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    show: { opacity: 1, scale: 1, transition: { duration: 0.5 } }
-  };
+  const phrases = [
+    "100% PREMIUM BEEF",
+    "NEVER FROZEN",
+    "SMASHED TO PERFECTION",
+    "HANDCRAFTED DAILY",
+    "OUR SECRET SAUCE",
+    "ALWAYS FRESH",
+    "THE ULTIMATE BURGER EXPERIENCE",
+    "LEGENDARY FLAVOUR"
+  ];
 
   return (
-    <div className="bg-secondary py-8 lg:py-12 border-b border-[#333]">
-      <motion.div 
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-50px" }}
-        variants={containerVariants}
+    <div className="bg-accent py-4 lg:py-6 overflow-hidden flex items-center border-y border-[#333]">
+      <motion.div
+        className="flex whitespace-nowrap w-fit"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
       >
-        <motion.h2 
-          className="text-white font-heading uppercase tracking-widest mb-6 lg:mb-10" style={{ fontSize: 'clamp(1.875rem, 3.5vw, 3rem)' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          Original Burgers Built For You Daily
-        </motion.h2>
-        <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
-          <motion.div variants={itemVariants} className="text-gray-400 font-heading text-2xl lg:text-3xl uppercase tracking-widest hover:text-accent transition-colors cursor-pointer">
-            UBER EATS
-          </motion.div>
-          <motion.div variants={itemVariants} className="text-gray-400 font-heading text-2xl lg:text-3xl uppercase tracking-widest hover:text-accent transition-colors cursor-pointer">
-            DELIVEROO
-          </motion.div>
-          <motion.div variants={itemVariants} className="text-gray-400 font-heading text-2xl lg:text-3xl uppercase tracking-widest hover:text-accent transition-colors cursor-pointer">
-            CLICK & COLLECT
-          </motion.div>
+        {/* Set 1 */}
+        <div className="flex gap-8 px-4 items-center">
+          {phrases.map((phrase, i) => (
+            <React.Fragment key={i}>
+              <span className="text-primary font-heading uppercase text-xl lg:text-3xl tracking-widest font-bold">
+                {phrase}
+              </span>
+              <span className="text-primary/50 text-2xl">◆</span>
+            </React.Fragment>
+          ))}
+        </div>
+        
+        {/* Set 2 (Exact Duplicate for perfectly seamless infinite loop) */}
+        <div className="flex gap-8 px-4 items-center">
+          {phrases.map((phrase, i) => (
+            <React.Fragment key={`dup-${i}`}>
+              <span className="text-primary font-heading uppercase text-xl lg:text-3xl tracking-widest font-bold">
+                {phrase}
+              </span>
+              <span className="text-primary/50 text-2xl">◆</span>
+            </React.Fragment>
+          ))}
         </div>
       </motion.div>
     </div>

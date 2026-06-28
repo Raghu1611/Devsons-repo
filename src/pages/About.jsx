@@ -9,90 +9,111 @@ const About = () => {
   return (
     <main className="bg-primary min-h-screen pt-[90px] lg:pt-[100px] selection:bg-accent selection:text-primary overflow-hidden">
       
-      {/* Hero Section */}
-      <div className="relative w-full h-[60vh] min-h-[500px] flex flex-col justify-center items-center overflow-hidden border-b border-[#333]">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: 'url("/images/devsons_storefront.png")' }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-primary/80"></div>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center"
-        >
-          <Crown className="w-16 h-16 text-accent mb-6" />
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="h-[1px] w-12 bg-accent"></div>
-            <p className="text-accent font-body tracking-[0.3em] uppercase text-sm font-semibold">Since 2024</p>
-            <div className="h-[1px] w-12 bg-accent"></div>
-          </div>
-          <h1 className="text-white font-heading uppercase tracking-widest drop-shadow-2xl mb-6 leading-none" style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}>
-            OUR <span className="text-accent">STORY</span>
-          </h1>
-          <p className="text-gray-300 font-body text-lg md:text-xl font-light max-w-2xl mx-auto">
-            Not just burgers. It's a Devson's experience. We set out to redefine the premium smash burger, using only the finest ingredients and unapologetically bold flavours.
-          </p>
-        </motion.div>
-      </div>
-
-      {/* The Journey */}
-      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Our Story Section */}
+      <section className="py-24 lg:py-32 px-4 sm:px-6 lg:px-12 max-w-[1400px] mx-auto border-b border-[#333]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
+          {/* Left Text Content */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="flex flex-col items-start text-left"
           >
-            <h2 className="text-white font-heading text-4xl lg:text-5xl uppercase tracking-widest mb-8 leading-tight">
-              Smashed to <span className="text-accent">Perfection</span>
+            <h1 className="text-white font-heading uppercase tracking-widest mb-6 leading-none" style={{ fontSize: 'clamp(3.5rem, 6vw, 5rem)' }}>
+              OUR STORY
+            </h1>
+            
+            <div className="h-[2px] w-24 bg-accent mb-8"></div>
+            
+            <h2 className="text-accent font-heading uppercase tracking-widest leading-tight mb-8" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
+              OUR CONCEPT IS<br/>VERY SIMPLE.
             </h2>
-            <div className="space-y-6 text-gray-400 font-body leading-relaxed font-light">
+            
+            <div className="space-y-6 text-gray-300 font-body leading-relaxed max-w-xl text-lg">
               <p>
-                The Devson's journey began with a simple belief: a burger should be more than just fast food. It should be an experience, crafted with passion and precision.
+                Giving the customer a burger that ticks all the boxes from taste to price to quality. A burger should be simple and great tasting. It shouldn't be made complicated.
               </p>
               <p>
-                We spent months perfecting our signature smash technique, ensuring every 3oz 100% Angus beef patty achieves that legendary crispy crust while locking in the juicy flavour inside. 
+                We use the freshest ingredients and bring them together under our signature techniques. No frozen patties, no compromises—just pure, unapologetically bold flavours in every single bite.
               </p>
-              <p>
-                Paired with our bespoke house-made sauces, perfectly melted double American cheese, and toasted potato buns, every bite of a Devson's burger is designed to be unforgettable.
-              </p>
-            </div>
-            <div className="mt-12 grid grid-cols-2 gap-8">
-              <div>
-                <h4 className="text-accent font-heading text-3xl mb-2">100%</h4>
-                <p className="text-white font-body text-xs uppercase tracking-widest font-bold">Pure Angus Beef</p>
-              </div>
-              <div>
-                <h4 className="text-accent font-heading text-3xl mb-2">0%</h4>
-                <p className="text-white font-body text-xs uppercase tracking-widest font-bold">Frozen Ingredients</p>
-              </div>
             </div>
           </motion.div>
           
+          {/* Right Image Content */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative h-full min-h-[400px] lg:min-h-[600px] w-full rounded-lg overflow-hidden"
           >
-            <div className="absolute inset-0 bg-accent/20 blur-[100px] rounded-full"></div>
+            <div className="absolute inset-0 bg-accent/10 blur-[100px] rounded-full"></div>
             <img 
-              src="/images/devsons_signature_burger.png" 
-              alt="Devson's Signature Burger" 
-              className="w-full h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)]"
+              src="/images/devsons_packaging.png" 
+              alt="Devson's Packaging and Fries" 
+              className="w-full h-full object-cover relative z-10 rounded-lg drop-shadow-[0_20px_50px_rgba(212,175,55,0.15)] mix-blend-lighten"
+              onError={(e) => {
+                e.target.src = '/images/devsons_signature_burger.png';
+              }}
             />
           </motion.div>
+
         </div>
       </section>
 
       {/* Reused Sections for Consistency */}
       <AboutSection />
-      <ValuesSection />
+      {/* Attractive Food Showcase Gallery */}
+      <section className="py-24 border-b border-[#333] bg-primary overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="h-[1px] w-8 bg-accent"></div>
+              <h2 className="text-accent font-body tracking-[0.2em] uppercase text-sm font-semibold">Taste The Difference</h2>
+              <div className="h-[1px] w-8 bg-accent"></div>
+            </div>
+            <h3 className="text-white font-heading uppercase text-4xl lg:text-6xl tracking-wide drop-shadow-lg">CRAFTED TO PERFECTION</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {[
+              { name: 'Oklahoma Classic', img: '/images/oklahoma_classic.png' },
+              { name: 'BBQ Bacon Beast', img: '/images/bbq_beef_bacon_beast.png' },
+              { name: 'Mac Algerian', img: '/images/mac_algerian_attack.png' },
+              { name: 'Devson\'s Original', img: '/images/devsons_signature_burger.png' }
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="group relative bg-secondary rounded-2xl overflow-hidden border border-[#333] hover:border-accent transition-colors duration-500 h-[380px] flex flex-col justify-end cursor-pointer shadow-lg hover:shadow-[0_10px_30px_rgba(212,175,55,0.2)]"
+              >
+                {/* Background Glow */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.15)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Image */}
+                <div className="absolute inset-0 flex justify-center items-center p-6 lg:p-8">
+                  <img 
+                    src={item.img} 
+                    alt={item.name} 
+                    className="w-full h-full object-contain mix-blend-lighten transform group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-700 drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)]" 
+                  />
+                </div>
+                
+                {/* Text Overlay */}
+                <div className="relative z-10 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent p-6 pt-24 text-center transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500">
+                  <h4 className="text-white font-heading uppercase text-xl lg:text-2xl tracking-wider">{item.name}</h4>
+                  <div className="w-12 h-[2px] bg-accent mx-auto mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-100"></div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
     </main>
   );

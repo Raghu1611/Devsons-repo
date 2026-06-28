@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Crown } from 'lucide-react';
 
 const AboutSection = () => {
@@ -57,18 +58,22 @@ const AboutSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
+          <Link to="/our-food">
             <motion.button 
               whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
               whileTap={{ scale: 0.95 }}
               className="bg-accent text-primary font-heading uppercase hover:bg-white transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 2.5rem)' }}>
               Our Food
             </motion.button>
+          </Link>
+          <Link to="/menu">
             <motion.button 
               whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
               whileTap={{ scale: 0.95 }}
               className="border-4 border-white text-white font-heading uppercase hover:bg-white transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 2.5rem)' }}>
               View Our Menu
             </motion.button>
+          </Link>
           </motion.div>
         </motion.div>
         
@@ -83,7 +88,7 @@ const AboutSection = () => {
           <img 
             src="/images/devsons_signature_burger.png" 
             alt="Devson's Signature Burger" 
-            className="w-full max-w-xl h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform duration-700"
+            className="w-full max-w-xl h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(212,175,55,0.2)] hover:scale-105 transition-transform duration-700 mix-blend-lighten"
           />
         </motion.div>
 
