@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ValuesSection = () => {
 
@@ -8,10 +9,11 @@ const ValuesSection = () => {
       className="relative py-24 lg:py-40 overflow-hidden border-b border-[#333] bg-primary"
     >
       <div 
-        className="absolute inset-0 bg-cover bg-center opacity-40"
+        className="absolute inset-0 bg-cover bg-center opacity-70"
         style={{ backgroundImage: 'url("/images/devsons_storefront.png")' }}
       ></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary"></div>
+      <div className="absolute inset-0 bg-black/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-transparent opacity-80"></div>
 
       <motion.div 
         className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center"
@@ -57,18 +59,22 @@ const ValuesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <motion.button 
-            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(212,175,55,0.3)" }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-accent text-primary font-heading uppercase hover:bg-white transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 3rem)' }}>
-            FIND A STORE
-          </motion.button>
-          <motion.button 
-            whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255,255,255,0.2)" }}
-            whileTap={{ scale: 0.95 }}
-            className="border-4 border-white text-white font-heading uppercase hover:bg-white hover:text-black transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 3rem)' }}>
-            ORDER DELIVERY
-          </motion.button>
+          <Link to="/menu">
+            <motion.button 
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(212,175,55,0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-accent text-primary font-heading uppercase hover:bg-white transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 3rem)' }}>
+              FIND A STORE
+            </motion.button>
+          </Link>
+          <Link to="/menu">
+            <motion.button 
+              whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px rgba(255,255,255,0.2)" }}
+              whileTap={{ scale: 0.95 }}
+              className="border-4 border-white text-white font-heading uppercase hover:bg-white hover:text-black transition-colors w-full sm:w-auto text-center" style={{ fontSize: 'clamp(1.25rem, 2vw, 1.875rem)', padding: 'clamp(1rem, 1.5vw, 1.25rem) clamp(2rem, 3vw, 3rem)' }}>
+              ORDER DELIVERY
+            </motion.button>
+          </Link>
         </motion.div>
       </motion.div>
     </div>

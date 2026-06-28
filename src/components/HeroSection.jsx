@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const ref = useRef(null);
@@ -14,17 +15,19 @@ const HeroSection = () => {
   return (
     <div 
       ref={ref}
-      className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center bg-primary overflow-hidden border-b border-[#333]"
+      className="relative w-full min-h-[85vh] flex items-center justify-center bg-primary overflow-hidden border-b border-[#333] pt-[100px]"
     >
-      {/* Hero Background - Pure gradient */}
+      {/* Hero Background - Storefront Image */}
       <div 
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary/50 via-primary to-primary"
+        className="absolute inset-0 bg-cover bg-center opacity-40"
+        style={{ backgroundImage: 'url("/images/devsons_storefront.png")' }}
       ></div>
       
-      {/* Dark Overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/50"></div>
+      {/* Dark Overlay for depth and text readability */}
+      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 mt-[90px]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-12 py-12">
         {/* Left Text Content */}
         <motion.div 
           className="text-center lg:text-left flex-1"
@@ -59,18 +62,22 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           >
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border border-white text-white font-body text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors w-full sm:w-auto px-8 py-4 sm:px-12 sm:py-5 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]">
-              DOWNLOAD MENU
-            </motion.button>
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-accent text-primary font-body text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors w-full sm:w-auto px-8 py-4 sm:px-12 sm:py-5 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
-              ORDER ONLINE
-            </motion.button>
+            <Link to="/menu">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="border border-white text-white font-body text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors w-full sm:w-auto px-8 py-4 sm:px-12 sm:py-5 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.3)]">
+                DOWNLOAD MENU
+              </motion.button>
+            </Link>
+            <Link to="/menu">
+              <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-accent text-primary font-body text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-colors w-full sm:w-auto px-8 py-4 sm:px-12 sm:py-5 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]">
+                ORDER ONLINE
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
 

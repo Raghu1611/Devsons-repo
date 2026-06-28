@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Crown } from 'lucide-react';
 
 const MenuCarousel = () => {
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -350, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 350, behavior: 'smooth' });
+    }
+  };
+
   const carouselItems = [
     {
       id: 1,
@@ -64,10 +78,10 @@ const MenuCarousel = () => {
             </h2>
         </div>
         <div className="hidden md:flex gap-4">
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-12 h-12 border border-gray-800 flex justify-center items-center text-white hover:bg-accent hover:border-accent hover:text-primary transition-colors rounded-full">
+          <motion.button onClick={scrollLeft} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-12 h-12 border border-gray-800 flex justify-center items-center text-white hover:bg-accent hover:border-accent hover:text-primary transition-colors rounded-full">
             &larr;
           </motion.button>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-12 h-12 border border-gray-800 flex justify-center items-center text-white hover:bg-accent hover:border-accent hover:text-primary transition-colors rounded-full">
+          <motion.button onClick={scrollRight} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="w-12 h-12 border border-gray-800 flex justify-center items-center text-white hover:bg-accent hover:border-accent hover:text-primary transition-colors rounded-full">
             &rarr;
           </motion.button>
         </div>
@@ -75,6 +89,7 @@ const MenuCarousel = () => {
       
       {/* Carousel Container */}
       <motion.div 
+        ref={carouselRef}
         className="flex overflow-x-auto no-scrollbar pb-12 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory gap-8 items-stretch"
         variants={containerVariants}
         initial="hidden"
@@ -94,7 +109,7 @@ const MenuCarousel = () => {
               <img 
                 src={item.image} 
                 alt={item.name} 
-                className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 relative z-10" 
+                className="w-full h-full object-contain p-4 transform group-hover:scale-110 transition-transform duration-700 relative z-10" 
               />
             </div>
             

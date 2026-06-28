@@ -7,10 +7,10 @@ import ValuesSection from '../components/ValuesSection';
 const Home = () => {
   return (
     <main>
+      <ValuesSection />
       <HeroSection />
       <MenuCarousel />
       <AboutSection />
-      <ValuesSection />
     </main>
   );
 };
